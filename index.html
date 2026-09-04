@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskFlow — Modern To-Do Manager</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <span class="logo-icon">✓</span>
+        <h1>TaskFlow</h1>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <span class="icon-sun">☀️</span>
+        <span class="icon-moon">🌙</span>
+      </button>
+    </header>
+
+    <!-- Stats Bar -->
+    <div class="stats">
+      <div class="stat">
+        <span class="stat-value" id="totalTasks">0</span>
+        <span class="stat-label">Total</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="activeTasks">0</span>
+        <span class="stat-label">Active</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="completedTasks">0</span>
+        <span class="stat-label">Done</span>
+      </div>
+    </div>
+
+    <!-- Add Task -->
+    <form class="add-form" id="addForm">
+      <div class="input-wrapper">
+        <input
+          type="text"
+          id="taskInput"
+          placeholder="What needs to be done?"
+          autocomplete="off"
+          maxlength="120"
+        />
+        <button type="submit" class="add-btn" aria-label="Add task">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+        </button>
+      </div>
+    </form>
+
+    <!-- Filters -->
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="active">Active</button>
+      <button class="filter-btn" data-filter="completed">Completed</button>
+    </div>
+
+    <!-- Task List -->
+    <ul class="task-list" id="taskList"></ul>
+
+    <!-- Empty State -->
+    <div class="empty-state" id="emptyState">
+      <div class="empty-icon">📝</div>
+      <p>No tasks yet. Add one above!</p>
+    </div>
+
+    <!-- Clear Completed -->
+    <div class="actions">
+      <button class="clear-btn" id="clearCompleted" hidden>
+        Clear completed
+      </button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>Created By Adityacse2027</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
